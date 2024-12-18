@@ -56,7 +56,7 @@ export function MainPage() {
 
 
       <Card style={{justifyContent: 'center', alignItems: 'center', gap: 15, height: 309}}>
-        <CircleView>
+        <CircleView style={{width: 92, height: 92}}>
           <Image
             source={require('../../assets/image/logo_icon1.png')}
             style={{width: 31, height: 48}}

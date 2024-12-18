@@ -9,6 +9,7 @@ import BottomSheet, {
   BottomSheetModal, BottomSheetModalProvider
 } from '@gorhom/bottom-sheet';
 import {MainPage} from 'page/main/MainPage.tsx';
+import CallPage from 'page/call/CallPage.tsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +27,7 @@ function App()  {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="chat"
+      <Stack.Navigator initialRouteName="call"
                        screenOptions={{
                          headerTitleAlign: 'center',
                          headerShadowVisible: false,
@@ -37,7 +38,8 @@ function App()  {
                            fontSize: 18
                          }
                        }}>
-        <Stack.Screen name="chat" options={{title: "모아"}} component={ChatPage}/>
+        <Stack.Screen name="call" component={CallPage} options={{headerShown: false}} />
+        <Stack.Screen name="chat" component={ChatPage} options={{title: "모아"}} />
         <Stack.Screen name="main" component={MainPage} options={{headerShown: false}}/>
 
       </Stack.Navigator>

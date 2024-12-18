@@ -1,18 +1,25 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {View} from 'react-native';
 import {Color} from 'assets/StyleConfig.tsx';
+import {StyleProp} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import {ViewStyle} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
-export const CircleView = ({ children }: React.PropsWithChildren) => {
+type CircleViewProps = {
+  children?: React.ReactNode|undefined;
+  style?: StyleProp<ViewStyle>|undefined,
+}
+
+export const CircleView = ({ children, style }: CircleViewProps) => {
   return (
-    <View style={{
-      width: 92,
-      height: 92,
-      borderWidth: 1,
-      borderColor: '#C6C8C7',
-      borderRadius: '50%',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
+    <View style={[
+      {
+        borderWidth: 1,
+        borderColor: '#C6C8C7',
+        borderRadius: '50%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }, style
+    ]}>
       {children}
     </View>
   )
